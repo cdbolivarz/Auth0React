@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
-    "dev": "webpack-dev-server --mode=development",
+    "webpack-dev": "webpack-dev-server --mode=development",
     "now-build": "npm run build",
     "build": "webpack",
+    "dev": "npm-run-all --parallel webpack-dev server",
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,9 +19,11 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "html-webpack-plugin": "^3.2.0",
     "standard": "^12.0.1",
     "webpack": "^4.33.0",
@@ -27,8 +31,10 @@
     "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
+    "@babel/runtime": "^7.7.7",
     "path": "^0.12.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
