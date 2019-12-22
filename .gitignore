@@ -1,5 +1,5 @@
 dist/
 node_modules/
-./package-lock.json
+package-lock.json
 src/auth_config.json
 npm-debug.log
